@@ -1,10 +1,8 @@
+test
 googleCTFの解説をしてこうと思います。<br>
-<<<<<<< HEAD
 
-[GoogleCTF サイト](https://capturetheflag.withgoogle.com/)
+![GoogleCTF サイト](https://capturetheflag.withgoogle.com/)
 
-=======
->>>>>>> parent of 0d734c1... update
 主にBeginnersQuestをメインに解説していこうと思います。<br>
 (Challengesは正直レベルが高く1問しか解けなかった....)<br>
 challengesもできた問題のみ解説します。<br>
@@ -201,6 +199,7 @@ dosbox.confの中身を変更する必要があるのです。
 serial1=modem listenport:5000
 serial2=modem listenport:5001
 `
+![](image/f.png)
 
 そうすることで,デバッガーが緊急停止した時に,再度実行されます。
 
@@ -261,6 +260,43 @@ Stan a new one
 これをシーザー暗号で一文字ずつずらしながら確認していきます。<br>
 
 あとはtrコマンドやpythonでコード作ったりして文字をずらして確認していくだけです。<br>
+
+参考までにcaeser暗号解読プログラムを載せておきます<br>
+クソみたいなプログラムですがご了承ください<br>
+
+
+```
+#!/usr/bin/python
+# -*- Coding: utf-8 -*-
+
+
+
+file = open('orc.txt','r')
+txt = file.read()
+shift = 8
+zura = 0
+
+
+
+def Caeser(string):
+    save = ''
+    for s in string:
+        s = ord(s)
+        if 65 <= s and s<= 90:
+            s = s + shift
+            if s > 90:
+               zura = s - 60
+               s = 65 + zura  
+        elif 97 <= s and s <= 122:
+            s = s + 3
+            if s > 122:
+               zura  = s - 122
+               s = 97 + zura
+        s = chr(s)
+        save += s
+    return save
+print Caeser(txt)
+```
 
 flag:`CTF{caesarcipherisasubstitutioncipher}`
 
