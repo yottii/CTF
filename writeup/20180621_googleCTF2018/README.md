@@ -198,7 +198,7 @@ dosbox.confの中身を変更する必要があるのです。
 serial1=modem listenport:5000
 serial2=modem listenport:5001
 `
-![](image/t.png)
+![](image/f.png)
 
 そうすることで,デバッガーが緊急停止した時に,再度実行されます。
 
