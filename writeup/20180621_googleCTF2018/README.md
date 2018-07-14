@@ -1,4 +1,3 @@
-test
 googleCTFの解説をしてこうと思います。<br>
 
 ![GoogleCTF サイト](https://capturetheflag.withgoogle.com/)
@@ -199,7 +198,6 @@ dosbox.confの中身を変更する必要があるのです。
 serial1=modem listenport:5000
 serial2=modem listenport:5001
 `
-![](image/f.PNG)
 
 そうすることで,デバッガーが緊急停止した時に,再度実行されます。
 
@@ -321,10 +319,16 @@ Zip archive data, at least v2.0 to extract
 zipファイルということがわかります。<br>
 これにzip拡張子を追加して解凍してみましたが,うまくいきませんでした。<br>
 
-これはpassword付きのzipファイルということが判明しました。<br>
+これは多重に圧縮されているzipファイルです<br>
+とりあえずひたすら圧縮されているファイルを解凍していきます
+
 パスワードの解析にはJohnTheRipperを使います。<br>
 
+
+
 ちなみにMac環境では,JohnTheRIpperがインストールできなかったので, Debian環境でやりました....(誰かmac環境でインストールできる人がいたら教えてください...)<br>
+
+
 
 
 
@@ -567,3 +571,7 @@ choosing songs from random artist: yotti' UNION SELECT ( SELECT oauth_token FROM
 ```
 
 はいoauth_tokenを抜き出すことができました。
+
+
+## 
+##
