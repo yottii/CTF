@@ -77,6 +77,18 @@ binwalk,unzipでも抽出ができないので,zipファイルのヘッダ情報
 色々調べてみるとlocal file header signatureは0x04034b50(054b0304)で表されているということが判明.<br>
 早速evidence.jpgファイルをバイナリエディタで調べてみると,054b0506となっていたので書き換えてみる<br>
 
+```
+修正前
+00021f50  6d cb 73 4f a0 b9 75 b9  ff d9 50 4b 05 06 14 00  |m.sO..u...PK....|
+00021f60  00 00 09 00 5b 68 e4 4c  2e db f5 54 74 31 01 00  |....[h.L...Tt1..|
+```
+```
+修正後
+00021f50  6d cb 73 4f a0 b9 75 b9  ff d9 50 4b 03 04 14 00  |m.sO..u...PK....|
+00021f60  00 00 09 00 5b 68 e4 4c  2e db f5 54 74 31 01 00  |....[h.L...Tt1..|
+```
+
+
 書き換えた後binwalkで抽出してみると....
 
 ```
@@ -95,7 +107,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 上手くいきました！！<br>
 message.pdfを開いてみましょう<br>
 
-![](image/broken.jpg)
+![](image/broken.png)
 
 
 壊れていますね^^; 　一緒に出てきたzipファイルを見てみましょう<br>
