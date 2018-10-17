@@ -14,8 +14,7 @@ hello. I'm yotti.<br>
 なんだか少し親近感が湧きつつ,解析を進めていきます<br>
 まず画像にファイルが埋め込まれていないか調べてみます.<br>
 
-'''
-
+```
 net40-dhcp179:file yotti$ binwalk -e evidence.jpg 
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -23,5 +22,6 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 0             0x0             JPEG image data, JFIF standard 1.01
 30            0x1E            TIFF image data, big-endian, offset of first image directory: 8
 217428        0x35154         End of Zip archive
+```
 
-'''
+なにやらzipファイルが含まれているっぽいです<br>
