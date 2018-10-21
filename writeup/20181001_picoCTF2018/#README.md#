@@ -1,0 +1,182 @@
+## PicoCTF 2018 ##
+## Introduction ##
+
+hello! I'm yotti.<br>
+’º£’²ó’¤ÏpicoCTF’¤Î’Ìä’Âê’¤ò’²ò’¤¤’¤Æ’¤ß’¤Þ’¤·’¤¿’¡¼<br>
+’¤ä’¤Ã’¤¿’´¶’¤¸,’¥Ó’¥®’¥Ê’¡¼’¥º’¸þ’¤±’¤Îctf’¤Ç’¤·’¤¿<br>’¸å’È¾’²ò’¤±’¤Ê’¤¤’Ìä’Âê’¤¬’¤¢’¤ê’¤Þ’¤·’¤¿’¤¬...<br>
+ctf’½é’¿´’¼Ô’¤È’¤«,’ºÇ’¶á’¤ä’¤Ã’¤¿’¤Ð’¤Ã’¤«’¤ê’¤È’¤«’¤Î’¿Í’¤Ë’¤Ï’¤Ô’¤Ã’¤¿’¤ê’¤À’¤Ã’¤¿’¤Î’¤Ç’¤Ï’¤Ê’¤¤’¤Ç’¤·’¤ç’¤¦’¤«’¡©<br>
+’¤½’¤ì’Ìä’Âê’¤ò’²ò’¤¤’¤¿’¤Î’¤Ë,"you or one of your teammates have already tried this solutions"<br>
+’¤È’¤Ê’¤ê’²ò’¤¤’¤¿’¤³’¤È’¤Ë’¤Ê’¤é’¤Ê’¤«’¤Ã’¤¿’Ìä’Âê’¤¬’Â¿’¡¹’¤¢’¤ê’º¤’¤Ã’¤Æ’¤Þ’¤¹(’¸½’ºß’¿Ê’¹Ô’·Á)<br>
+I don't know what is this problem for us, please teach me to solve its problem!!<br>
+
+
+Forensics Warmup 1 - Points: 50 - (Solves: 9470) Forensics -  
+Forensics Warmup 2 - Points: 50 - (Solves: 8980) Forensics -  
+General Warmup 1 - Points: 50 - (Solves: 11485) General Skills -  
+General Warmup 2 - Points: 50 - (Solves: 11381) General Skills -  
+General Warmup 3 - Points: 50 - (Solves: 11221) General Skills -  
+Resources - Points: 50 - (Solves: 10234) General Skills -  
+Reversing Warmup 1 - Points: 50 - (Solves: 6677) Reversing -  
+Reversing Warmup 2 - Points: 50 - (Solves: 8007) Reversing -  
+Crypto Warmup 1 - Points: 75 - (Solves: 5080) Cryptography -  
+Crypto Warmup 2 - Points: 75 - (Solves: 7699) Cryptography -  
+grep 1 - Points: 75 - (Solves: 8061) General Skills -  
+net cat - Points: 75 - (Solves: 7215) General Skills -  
+HEEEEEEERE'S Johnny! - Points: 100 - (Solves: 2602) Cryptography -  
+strings - Points: 100 - (Solves: 5496) General Skills -  
+pipe - Points: 110 - (Solves: 4962) General Skills -  
+Inspect Me - Points: 125 - (Solves: 6765) Web Exploitation -  
+grep 2 - Points: 125 - (Solves: 4739) General Skills -  
+Aca-Shell-A - Points: 150 - (Solves: 3133) General Skills -  
+Client Side is Still Bad - Points: 150 - (Solves: 6021) Web Exploitation -  
+Desrouleaux - Points: 150 - (Solves: 2237) Forensics -  
+Logon - Points: 150 - (Solves: 3239) Web Exploitation -  
+Reading Between the Eyes - Points: 150 - (Solves: 2426) Forensics -  
+Recovering From the Snap - Points: 150 - (Solves: 1962) Forensics -  
+admin panel - Points: 150 - (Solves: 3774) Forensics -  
+assembly-0 - Points: 150 - (Solves: 1924) Reversing -  
+buffer overflow 0 - Points: 150 - (Solves: 2662) Binary Exploitation -  
+caesar cipher 1 - Points: 150 - (Solves: 4485) Cryptography -  
+environ - Points: 150 - (Solves: 3464) General Skills -  
+hertz - Points: 150 - (Solves: 2690) Cryptography -  
+hex editor - Points: 150 - (Solves: 3710) Forensics -  
+ssh-keyz - Points: 150 - (Solves: 2954) General Skills -  
+Irish Name Repo - Points: 200 - (Solves: 3037) Web Exploitation -  
+Mr. Robots - Points: 200 - (Solves: 3093) Web Exploitation -  
+Truly an Artist - Points: 200 - (Solves: 3169) Forensics -  
+be-quick-or-be-dead-1 - Points: 200 - (Solves: 1165) Reversing -  
+leak-me - Points: 200 - (Solves: 1897) Binary Exploitation -  
+now you don't - Points: 200 - (Solves: 3221) Forensics -  
+shellcode - Points: 200 - (Solves: 924) Binary Exploitation -  
+what base is this? - Points: 200 - (Solves: 3235) General Skills -  
+Buttons - Points: 250 - (Solves: 2534) Web Exploitation -  
+got-2-learn-libc - Points: 250 - (Solves: 382) Binary Exploitation -  
+rsa-madlibs - Points: 250 - (Solves: 962) Cryptography -  
+echooo - Points: 300 - (Solves: 860) Binary Exploitation -  
+got-shell? - Points: 350 - (Solves: 523) Binary Exploitation -  
+LoadSomeBits - Points: 550 - (Solves: 424) Forensics -  
+
+
+
+’Ìä’Âê’¤Ï’¤³’¤ó’¤Ê’´¶’¤¸’¤Ç’¤¹’¤Í’¡¢’Á°’È¾’¤Ï’¥¯’¥½’´Ê’Ã±’¤Ê’¤Î’¤Ç’¾Ê’Î¬’¤·’¤Þ’¤¹’¡£
+pint100’¤¯’¤é’¤¤’¤«’¤é’²ò’Àâ’¤·’¤Þ’¤¹(’¤½’¤ì’¤Ç’¤â’´Ê’Ã±’¤À’¤¬....)
+
+
+
+## HEEEEEEERE'S Johnny! - Points: 100 - ##
+
+’Ìä’Âê’Ê¸’¤Ï’°Ê’²¼’¤Î’¤È’¤ª’¤ê
+
+```
+Okay, so we found some important looking files on a linux computer. Maybe they can be used to get a password to the process. Connect with nc 2018shell3.picoctf.com 42165. Files can be found here: passwd shadow.
+```
+
+’¤³’¤ì’¤Ïjohn the ripper’¤ò’»È’¤¦’Ìä’Âê’¤Ã’¤Ý’¤¤’¤Ç’¤¹’¤Í’¡¢passwd’¤Èshadow’¥Õ’¥¡’¥¤’¥ë’¤¬’Í¿’¤¨’¤é’¤ì’¤Æ’¤¤’¤Þ’¤¹.
+’¤Ç’¤Ï’Áá’Â®’²ò’¤¤’¤Æ’¤¤’¤­’¤Þ’¤·’¤ç’¤¦’¡ª’¡ª
+
+’¤È’¤ê’¤¢’¤¨’¤º nc 2018shell3.picoctf.com 42165’¤Ë’ÀÜ’Â³’¤·’¤Æ’¤ß’¤Þ’¤¹’¡£
+
+'''
+net40-dhcp179:file yotti$ nc 2018shell3.picoctf.com 42165
+Username: test
+Password: test  
+Failed Login!
+```
+
+’²ò’ÀÏ’¤·’¤¿’¥æ’¡¼’¥¶’¡¼’Ì¾’¤È’¥¢’¥É’¥ì’¥¹’¤ò’Æþ’ÎÏ’¤¹’¤ë’¤è’¤¦’¤Ç’¤¹’¤Í.’Áá’Â®john’¤Çpass’¥Õ’¥¡’¥¤’¥ë’¤ò’²ò’ÀÏ’¤·’¤Þ’¤¹’¡¼’¡£
+
+```
+net40-dhcp179:file yotti$ cat shadow 
+root:$6$HRMJoyGA$26FIgg6CU0bGUOfqFB0Qo9AE2LRZxG8N3H.3BK8t49wGlYbkFbxVFtGOZqVIq3qQ6k0oetDbn2aVzdhuVQ6US.:17770:0:99999:7:::
+net40-dhcp179:file yotti$ cat passwd 
+root:x:0:0:root:/root:/bin/bashnet40-dhcp179:file yotti$ 
+```
+
+unshadow’¤ò’»È’¤Ã’¤Æshadow’¥Õ’¥¡’¥¤’¥ë’¤Èpasswd’¥Õ’¥¡’¥¤’¥ë’¤òjohn’¤Ë’²ò’ÀÏ’¤Ç’¤­’¤ë’·Á’¼°’¤Ë’¤·’¤Þ’¤¹’¡£
+
+```
+net40-dhcp179:file yotti$ /usr/local/Cellar/john/1.8.0/share/john/unshadow  passwd shadow > testfile
+net40-dhcp179:file yotti$ /usr/local/Cellar/john/1.8.0/share/john/john  --wordlist=/usr/local/Cellar/john/1.8.0/share/john/password.lst --users=root ./testfile 
+root:kissme:0:0:root:/root:/bin/bash
+1 password hash cracked, 0 left
+```
+
+’¤Ï’¤¤’²ò’ÀÏ’¤Ç’¤­’¤Þ’¤·’¤¿’¤Í’¡£<br>
+user:root<br>
+pass:kissme<br>
+
+login’¤·’¤Æ’¤ß’¤Þ’¤·’¤ç’¡¼’¡¢
+
+```
+net40-dhcp179:file yotti$   nc 2018shell2.picoctf.com 5221
+Username: root
+Password: kissme
+picoCTF{J0hn_1$_R1pp3d_289677b5}
+```
+
+’½Ð’¤Þ’¤·’¤¿’¤Í’¡¼’¡¢``picoCTF{J0hn_1$_R1pp3d_289677b5}``
+’º£’¸å’¤â’¿§’¡¹’»È’¤¦’¤È’»×’¤¦’¤Î’¤Ç’¤â’¤Ã’¤Èjohn’¤Î’»È’¤¤’Êý’¤Ë’¤Ä’¤¤’¤Æ’¥Þ’¥¹’¥¿’¡¼’¤·’¤¿’¤¤’¤È’»×’¤¤’¤Þ’¤¹...
+
+
+
+## Aca-Shell-A - Points: 150 -  ##
+
+```
+solve
+It's never a bad idea to brush up on those linux skills or even learn some new ones before you set off on this adventure! Connect with nc 2018shell3.picoctf.com 42334.
+```
+
+
+’¤³’¤Î’Ìä’Âê’¤Ï’·ë’¹½’ÌÌ’ÅÝ’¤¯’¤µ’¤«’¤Ã’¤¿’¤Ç’¤¹’¡£<br>
+’°ì’Äê’»þ’´Ö’·Ð’¤Ä’¤È’¼«’Æ°’Åª’¤Ë’¥í’¥°’¥¢’¥¦’¥È’¤Ë’¤Ê’¤ê’¡¢’¤Þ’¤¿’ºÇ’½é’¤«’¤é’¤Ë’¤Ê’¤ê’¤Þ’¤¹--;<br>
+
+```
+net40-dhcp179:20181001_picoCTF2018 yotti$ nc 2018shell3.picoctf.com 42334
+Sweet! We have gotten access into the system but we aren't root.
+It's some sort of restricted shell! I can't see what you are typing
+but I can see your output. I'll be here to help you along.
+If you need help, type "echo 'Help Me!'" and I'll see what I can do
+There is not much time left!
+~/$ ls
+blackmail
+executables
+passwords
+photos
+secret
+```
+’¤È’¤ê’¤¢’¤¨’¤º’ºÇ’½é’ÀÜ’Â³’¤¹’¤ë’¤È’¤³’¤ó’¤Ê’´¶’¤¸’¤Ë’¤Ê’¤ê’¤Þ’¤¹’¡£<br>
+shell’¤Î’Ì¿’Îá’ÄÌ’¤ê’¤Ë’¹Ô’Æ°’¤·’¤Æ’¤¤’¤¯’¤È’¡¢’À©’¸Â’¤¬’²ò’Êü’¤µ’¤ì’¤Æ’¤¤’¤¯’·Ï’¤Î’Ìä’Âê’¤Ã’¤Ý’¤¤’¤Ç’¤¹<br>
+’¿§’¡¹’¸«’¤¿’·ë’²Ìsecret’¥Ç’¥£’¥ì’¥¯’¥È’¥ê’°Ê’³°’¤Ï’²¿’¤â’¤Ê’¤«’¤Ã’¤¿’¤Ç’¤¹<br>
+’¤È’¤ê’¤¢’¤¨’¤º’¤³’¤Îsecret’¥Ç’¥£’¥ì’¥¯’¥È’¥ê’¤ò’¸«’¤Æ’¤ß’¤Þ’¤·’¤ç’¤¦<br>
+
+```
+~/$ cd secret
+Now we are cookin'! Take a lookls around there and tell me what
+ you find!
+~/secret$ intel_1
+intel_2
+intel_3
+intel_4
+intel_5
+profile_ahqueith5aekongieP4ahzugi
+profile_ahShaighaxahMooshuP1johgo
+profile_aik4hah9ilie9foru0Phoaph0
+profile_AipieG5Ua9aewei5ieSoh7aph
+profile_bah9Ech9oa4xaicohphahfaiG
+profile_ie7sheiP7su2At2ahw6iRikoe
+profile_of0Nee4laith8odaeLachoonu
+profile_poh9eij4Choophaweiwev6eev
+profile_poo3ipohGohThi9Cohverai7e
+profile_Xei2uu5suwangohceedaifohs
+Sabatoge them! Get rid of all their intel files!
+```
+
+intel’¥Õ’¥¡’¥¤’¥ë’¤ò’ºï’½ü’¤·’¤í’¤È’¸À’¤Ã’¤Æ’¤¤’¤ë’¤Î’¤Ç’ºï’½ü’¤·’¤Þ’¤¹’¡£
+
+```
+~/secret$ rm intel*
+Nice! Once they are all gone, I think I can drop you a file of an exploit!
+Just type "echo 'Drop it in!' " and we can give it a whirl!
+```
+
+’¼¡’¤Ëecho 'Drop it in'
