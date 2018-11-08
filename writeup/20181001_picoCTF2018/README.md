@@ -309,7 +309,7 @@ Stego-Saurus hid a message for you in this image, can you retreive it?
 ```
 
 forensics問題です。<br>
--(husky)[file/husky.png]
+![](file/husky.png)
 
 hintを見るとMaybe you can find an online decoder?<br>
 と書いてありますが、今回はツールを使います<br>
@@ -341,7 +341,7 @@ Processing: animals.dd
 
 outputのjpgファイルを見てみると..
 
--[file](file/output/00005861.jpg)
+![](file/output/00005861.jpg)
 
 ありましたねー<br>
 
