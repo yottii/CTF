@@ -341,7 +341,7 @@ Processing: animals.dd
 
 outputのjpgファイルを見てみると..
 
-![](file/output/00005861.jpg)
+![](file/output/jpg/00005861.jpg)
 
 ありましたねー<br>
 
