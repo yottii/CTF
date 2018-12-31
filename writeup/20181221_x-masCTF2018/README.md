@@ -2,7 +2,8 @@
 
 ## Introduction
 
-こんにちは、今回はxmas_ctf2018のwriteupを書いていこうと思います。<br>
+こんにちは、最近IDAproとburpproを買ってしまったyottiです<br>
+今回はxmas_ctf2018のwriteupを書いていこうと思います。<br>
 基本的に簡単な問題しか解いていません...TT<br>
 とりあえず解いた問題はこんな感じ...
 
@@ -17,6 +18,10 @@ forensic
 misc
  - Santa's Security Levels
  - the ultimate chrismas game
+
+## Rev
+
+
 
 ## Oh Chrismas Tree [forensic/25point]
 
@@ -77,7 +82,7 @@ test
 ## Santa's Security Level
 これは音声ファイルが渡され、それを解析する問題ですね<br>
 
--[](https://github.com/yottii/CTF/tree/master/writeup/20181221_x-masCTF2018/file/message.mp3)
+[音声ファイル](https://github.com/yottii/CTF/tree/master/writeup/20181221_x-masCTF2018/file/message.mp3)
 
 聞いてみると,どうやらモールス信号だということがわかります。<br>
 音声を文字に起こしてみると....
