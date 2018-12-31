@@ -1,4 +1,10 @@
+# X-mas_CTF_2018
 
+## Introduction
+
+こんにちは、今回はxmas_ctf2018のwriteupを書いていこうと思います。<br>
+基本的に簡単な問題しか解いていません...TT<br>
+とりあえず解いた問題はこんな感じ...
 こんにちは
 º£²ó¤È¤¤¤¿ÌäÂê¤Ï
 
@@ -15,14 +21,12 @@ misc
  - the ultimate chrismas game
 
 
-## OhChristmasTree [misc/25point]
+この問題は画像からflagを抽出問題ですね.画像はこちら<br>
 
-¤³¤ÎÌäÂê¤Ï²èÁü¤«¤éflag¤òÃê½Ð¤¹¤ëÌäÂê¤Ç¤¹¤Í.²èÁü¥Õ¥¡¥¤¥ë¤Ï¤³¤Á¤é<br>
+-[](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/file/MerryChristmas.jpg)
 
--[]()
-
-²èÁü¤Ë¤½¤ì¤é¤·¤¤Ê¸»úÎó¤¬¤Ê¤¤¤«Ãµ¤·¤Æ¤ß¤Þ¤¹¡£<br>
-
+クリスマスっぽい画像ですねぇ<br>
+まずそれっぽい文字列がないか探していきます。
 ```
 Copyright (c) 1998 Hewlett-X-MAS{0_Chr15tm
 desc
@@ -63,16 +67,14 @@ $M$|$
 test
 {this_is_not_the_flag_you_are_looking_for}P
 ```
-
-°ìÈÖ²¼¤Îflag¤Ã¤Ý¤¤Ê¸»úÎó¤Ï´°Á´¤Ë¥Õ¥§¥¤¥¯¤Ç¤¹¤Í<br>
-¤½¤ì¤Ã¤Ý¤¤strings¤¬¤¢¤ê¤Þ¤¹¤Í¡£
- - Hewlett-X-MAS{0_Chr15tm
+{this_is_not_the_flag_you_are_looking_for}はそれっぽいデスが完全にfakeですね。
+その上の文字列がflagっぽいです<br>
  - IEC as_tr33_1s_th1s_a 
  - IEC _flag_i_wond3r}.. 
-
+ - IEC _flag_i_wond3r}.. 
 ¤³¤ì¤é¤òÁÈ¤ß¹ç¤ï¤»¤ë¤È...<br>
-`X-MAS{0_Chr15tmas_tr33_1s_th1s_a_flag_i_wond3r}`
+これらを組みわせると...<br>
 ¤Ï¤¤flag¤¬½Ð¤Æ¤­¤Þ¤·¤¿¤Í¡£
-
+はい、flagが出てきました！
 
 ## 
