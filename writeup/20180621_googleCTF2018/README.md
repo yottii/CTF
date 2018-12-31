@@ -170,9 +170,11 @@ fileコマンドを使っても,有力な情報は手に入りません....<br>
 そこでwww.comの.comという拡張子が何なのか調べてみると<br>
 
 wikiより<br>
-`COM Filename extension COM
+```
+COM Filename extension COM
 Type of format Executable Extended to DOS MZ executable
-A COM file is a type of simple executable file. On the Digital Equipment operating systems of the 1970s, .COM was used as a filename extension for text files containing commands to be issued to the operating system (similar to a batch file).[1] With the introduction of CP/M (a microcomputer operating system), the type of files commonly associated with COM extension changed to that of executable files. This convention was later carried over to MS-DOS. Even when complemented by the more general .exe file format for executables, the compact COM files remained viable and frequently used in MS-DOS.`
+A COM file is a type of simple executable file. On the Digital Equipment operating systems of the 1970s, .COM was used as a filename extension for text files containing commands to be issued to the operating system (similar to a batch file).[1] With the introduction of CP/M (a microcomputer operating system), the type of files commonly associated with COM extension changed to that of executable files. This convention was later carried over to MS-DOS. Even when complemented by the more general .exe file format for executables, the compact COM files remained viable and frequently used in MS-DOS.```
+
 
 つまりMS-DOSで使われていた拡張子のようです。<br>
 そこでDOSboxというものをダウンロードして中で実行してみることにしました。
