@@ -19,7 +19,21 @@ misc
  - Santa's Security Levels
  - the ultimate chrismas game
 
-## Rev
+
+# Rev
+## Endress Chrismas(rev/50point)
+調べるとELF形式ですね<br>
+とりあえず実行してみると、以下のようによくわからないファイルが生成されるようです。
+```
+root@DESKTOP-6D11JFC:/home/yotti/CTF# ./chall
+Enter the flag: test
+NOPE
+root@DESKTOP-6D11JFC:/home/yotti/CTF# ls
+chall file4LFBrS fileCUcG4f fileI1yvVn fileVVIag6 filem35zRR filetCHsgv
+file40dpMz fileArUZtK fileHHAND1 fileNaoe02 fileg45kVW fileqSFOuG filevMGsFO
+```
+これのファイルもchallファイルと同様のものが生成されるようです。<br>
+とりあえず内部が見たいのでIDAproで見てみます。ちなみに冒頭でも言いましたが, IDApro買いました(｀・ω・´)ドヤ
 
 
 
@@ -130,5 +144,5 @@ X-MAS{SANTAISSOGLADMEU}
 ##  MessageFromSanta[forensic/50point]
 
 この問題は画像ファイルを組み合わせる問題です.
-パズルみたいで楽しかった
+パズルみたいで楽しかったですね。
 
