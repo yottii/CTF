@@ -33,9 +33,14 @@ chall file4LFBrS fileCUcG4f fileI1yvVn fileVVIag6 filem35zRR filetCHsgv
 file40dpMz fileArUZtK fileHHAND1 fileNaoe02 fileg45kVW fileqSFOuG filevMGsFO
 ```
 これのファイルもchallファイルと同様のものが生成されるようです。<br>
-とりあえず内部が見たいのでIDAproで見てみます。ちなみに冒頭でも言いましたが, IDApro買いました(｀・ω・´)ドヤ
+とりあえず内部が見たいのでIDAproで見てみます。ちなみに冒頭でも言いましたが, IDApro買いました(｀・ω・´)ドヤ<br>とりあえず10マン近くしたのでそれ分は働いてもらいます<br>
+
+んでmain関数を見てみます, こんな感じで
 
 
+-[]()
+
+call@0x40005fdで””
 
 ## Oh Chrismas Tree [forensic/25point]
 

@@ -38,9 +38,28 @@ file40dpMz fileArUZtK fileHHAND1 fileNaoe02 fileg45kVW fileqSFOuG filevMGsFO
 んでmain関数を見てみます, こんな感じで
 
 
--[]()
+-[](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/img/rev.png)
 
-call@0x40005fdで””
+@0x004005fdでstringsをcallしてますね。これはおそらく最初の"Enter the flag:"をcallしてます<br>
+
+このアセンブラコードを見てわかるのは, 
+
+@0x00400637で xor eax, 0xdとなっていことをみると0x0dをxorを取っているとるようです。<br>
+eaxには@0x601060が入っているので、この番地に入っている文字列をASCIIに直し、
+'''
+U @L^vi>n=i>R9;9<cR9ciR9;9<cR9ciR9;9<cR9ciR9;9<cR9ciRka9;p
+'''
+
+これをさらに0x0dでxorを取ると....<br>
+[プログラム]()
+```
+bash-3.2$ ./xor.py
+X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}
+```
+
+flagが出てきました.'X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}'
+
+
 
 ## Oh Chrismas Tree [forensic/25point]
 
