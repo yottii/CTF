@@ -46,9 +46,9 @@ file40dpMz fileArUZtK fileHHAND1 fileNaoe02 fileg45kVW fileqSFOuG filevMGsFO
 @0x00400637で xor eax, 0xdとなっていことをみると0x0dをxorを取っているとるようです。<br>
 eaxには@0x601060が入っているので、この番地に入っている文字列をASCIIに直し、
 
-'''
+```
 U @L^vi>n=i>R9;9<cR9ciR9;9<cR9ciR9;9<cR9ciR9;9<cR9ciRka9;p
-'''
+```
 
 これをさらに0x0dでxorを取ると....<br>
 [program](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/script/xor.py)
@@ -60,10 +60,11 @@ X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}
 ```
 
 flagが出てきました.
-'X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}'
+`X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}`
 
 
 
+# forensic & mics
 ## Oh Chrismas Tree [forensic/25point]
 
 この問題は画像からflagを抽出問題ですね.画像はこちら<br>
