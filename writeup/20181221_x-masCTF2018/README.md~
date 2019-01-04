@@ -2,7 +2,8 @@
 
 ## Introduction
 
-こんにちは、今回はxmas_ctf2018のwriteupを書いていこうと思います。<br>
+こんにちは、最近IDAproとburpproを買ってしまったyottiです<br>
+今回はxmas_ctf2018のwriteupを書いていこうと思います。<br>
 基本的に簡単な問題しか解いていません...TT<br>
 とりあえず解いた問題はこんな感じ...
 
@@ -17,6 +18,10 @@ forensic
 misc
  - Santa's Security Levels
  - the ultimate chrismas game
+
+## Rev
+
+
 
 ## Oh Chrismas Tree [forensic/25point]
 
