@@ -37,8 +37,7 @@ file40dpMz fileArUZtK fileHHAND1 fileNaoe02 fileg45kVW fileqSFOuG filevMGsFO
 
 んでmain関数を見てみます, こんな感じで
 
-
--[](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/img/rev.png)
+![](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/img/rev.png)
 
 @0x004005fdでstringsをcallしてますね。これはおそらく最初の"Enter the flag:"をcallしてます<br>
 
@@ -52,19 +51,23 @@ U @L^vi>n=i>R9;9<cR9ciR9;9<cR9ciR9;9<cR9ciR9;9<cR9ciRka9;p
 
 これをさらに0x0dでxorを取ると....<br>
 [プログラム]()
+[program](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/script/xor.py)
+
+
 ```
 bash-3.2$ ./xor.py
 X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}
 ```
 
-flagが出てきました.'X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}'
+flagが出てきました.
+'X-MAS{d3c0d3_4641n_4nd_4641n_4nd_4641n_4nd_4641n_4nd_fl46}'
 
 
 
 ## Oh Chrismas Tree [forensic/25point]
 
 この問題は画像からflagを抽出問題ですね.画像はこちら<br>
--[](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/file/MerryChristmas.jpg)
+![](https://github.com/yottii/CTF/blob/master/writeup/20181221_x-masCTF2018/file/MerryChristmas.jpg)
 
 クリスマスっぽい画像ですねぇ<br>
 まずそれっぽい文字列がないか探していきます。
